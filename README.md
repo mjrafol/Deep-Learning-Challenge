@@ -120,7 +120,41 @@ The report should contain the following:
 
 [Unit 21 Homework Rubric](https://docs.google.com/document/d/1SLOROX0lqZwa1ms-iRbHMQr1QSsMT2k0boO9YpFBnHA/edit?usp=sharing)
 
-- - - 
+- - -
 
-© 2022 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.	
+## Neural Network Report
+
+### Overview:
+The nonprofit foundation, **Alphabet Soup** needed a tool that can help it select the applicants for funding with the best chance of success in their ventures. Using machine learning and neural networks, an algorithm is developed to predict the applicant's success in their venture using various features.  This algorithm will enable the foundation to assist in deciding whether to select the applicant for funding.
+
+### Results:
+**Data Processing**
+<br>
+In the preprocessing of data, **IS_SUCCESSFUL** variable was identified as the target.  The purpose of the model is to determine the success of the applicant which is dependent on how effectively they use the fund.  The **EIN** variable was dropped as this is neither a target nor feautures.  The remaining variables in the dataset were retained as features.  Binning were done to reduce the noise on our model.  
+![Pre-processing_results.png](attachment:Pre-processing_results.png)
+<br>
+**Compiling, Training and Evaluating the Model**
+<br>
+*1) How many neurons, layers and activation function did you select for your neural network model and why?* <br>
+For the initial model, I used the default output neuron of 80 and 30 for the first and second layers, respectively.  Two layers were added and the rectified linear activation function or **relu** was used for input so it won't activate all the neurons at the same time, while **sigmoid** was used for output, as this is a *classification problem*.
+<br>
+<br>
+*2) Where you able to address the target model performance?*
+Yes
+<br>
+<br>
+*3) What steps did you take in your attemps to increase model performance?* 
+* Droped fewer column, the name was retained but the noise was reduced through binning.
+* Changed the neuron units to 156 and 27, for first and second layer, respectively
+* Added a third hidden layer with neuron units of 18
+* Reduced epoch from 100 to 50
+<br>
+
+### Summary:
+The initial model, **AlphabetSoupCharity.ipynb** only produced an accuracy of **below 75%**.  Despite several attempts to change the neuron units, layers and epochs, those had little impact on increasing the accuracy score.  As a result, I analyzed the dataset and realized that adding back the NAME as a feature is relevant as this determines the number of times the applicant applied for a funding.  However, there is too much noise (variance) on NAME, which had to be reduced through binning.
+
+In order to optimize the model, **AlphabetSoupCharity_Optimization.ipynb**, I needed to reduce the noise caused by the NAME variable by further binning names with count of less than 5 (reducing the uniques from 19568 to 403).  In addition, I added a third layer and changed the unit of neurons to 156, 27 and 18, for the 1st, 2nd and 3rd layers. The epoch was also reduced to 50 from 100. The output layer's activation function was retained to **sigmoid** as the model is supposed classify whether the applications will be successful or not.  These changes enable the model to produce an accuracy rate of **above 75%** or **79%**.
+
+- - - 
+	
 
