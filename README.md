@@ -133,7 +133,7 @@ The nonprofit foundation, **Alphabet Soup** needed a tool that can help it selec
 In the preprocessing of data, **IS_SUCCESSFUL** variable was identified as the target.  The purpose of the model is to determine the success of the applicant which is dependent on how effectively they use the fund.  The **EIN** variable was dropped as this is neither a target nor feautures.  The remaining variables in the dataset were retained as features.  Binning were done to reduce the noise on our model.  
 ![image](https://user-images.githubusercontent.com/91984732/185725496-d24dac20-4b36-44b5-8f47-45bbce51f27b.png)
 
-<br>
+
 **Compiling, Training and Evaluating the Model**
 <br>
 *1) How many neurons, layers and activation function did you select for your neural network model and why?* <br>
